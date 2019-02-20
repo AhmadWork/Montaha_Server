@@ -73,6 +73,7 @@ app.listen(config.port, () => {
   console.info(`server started on port ${config.port} (${config.env})`); // eslint-disable-line no-console
 });
 app.enable('trust proxy');
+const path = require('path');
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
