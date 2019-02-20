@@ -89,48 +89,7 @@ class FooterBar extends React.PureComponent {
             </div>
             <div className="col-sm-4">
               <div className="social-networks">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://twitter.com/asmscorses"
-                  className="twitter"
-                  title="My Twitter"
-                >
-                  <i className="fa fa-twitter" />
-                </a>
-                <a
-                  href="https://github.com/asmmahmud"
-                  className="github"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="My github page"
-                >
-                  <i className="fa fa-github" />
-                </a>
-                <a
-                  href="https://stackoverflow.com/users/story/1576255"
-                  className="stackoverflow"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="My stackoverflow Profile"
-                >
-                  <i className="fa fa-stack-overflow" />
-                </a>
-                <a
-                  href="https://www.upwork.com/o/profiles/users/_~01233afc5e2aac7f4f/"
-                  className="upwork"
-                  title="My Upwork Profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    onMouseOver={this.imgMouseOver}
-                    onMouseLeave={this.imgMouseLeave}
-                    src={this.state.upworIconImage}
-                    className="upwork-icon"
-                    alt="Upwork"
-                  />
-                </a>
+               
               </div>
               <NavLink className="btn btn-default" to="/contact-us">
                 <i className="fa fa-envelope" />
@@ -140,7 +99,7 @@ class FooterBar extends React.PureComponent {
           </div>
         </div>
         <div className="footer-copyright">
-          <p>© 2018 A.S.M. Mahmudul Hasan. All Rights Reserved.</p>
+          <p>© 2018 Montaha . All Rights Reserved.</p>
         </div>
       </footer>
     );
