@@ -1,0 +1,35 @@
+@import './_variable.scss';
+.product-list .page-title {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+.product-list .product-count {
+  display: flex;
+}
+.product-count .count-line {
+  color: $mid-grey;
+  align-self: flex-end;
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+.product-count .fa-warning {
+  align-self: flex-end;
+  margin-right: 5px;
+  font-size: 1.2rem;
+  color: darken($color3, 20%);
+}
+.product-count .fa-check-square {
+  align-self: flex-end;
+  margin-right: 5px;
+  font-size: 1.2rem;
+  color: $color4;
+}
+.product-list .pagination-row {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+.product-list .pagination-row .col-md-auto {
+  display: flex;
+  align-items: center;
+}

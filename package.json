@@ -1,0 +1,51 @@
+{
+  "name": "montaha_server",
+  "version": "1.0.0",
+  "private": false,
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon index.js ",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently  --success first \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "bcryptjs": "~2.4.3",
+    "bluebird": "~3.5.1",
+    "body-parser": "~1.18.2",
+    "bootstrap": "^4.3.1",
+    "compression": "^1.7.1",
+    "concurrently": "^4.1.0",
+    "cors": "~2.8.4",
+    "debug": "~3.1.0",
+    "express": "~4.16.2",
+    "express-jwt": "^5.3.1",
+    "express-jwt-authz": "^1.0.0",
+    "express-validation": "~1.0.2",
+    "helmet": "^3.9.0",
+    "http-status": "~1.0.1",
+    "joi": "^13.0.2",
+    "jsonwebtoken": "^8.1.0",
+    "jwks-rsa": "^1.4.0",
+    "material-ui": "^0.20.2",
+    "method-override": "~2.3.10",
+    "mongoose": "~4.13.2",
+    "morgan": "~1.9.0",
+    "nodemon": "^1.18.10",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-transition-group": "^2.5.3",
+    "reactstrap": "^7.1.0",
+    "reselect": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "eslint": "^4.11.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "prettier-eslint": "^8.2.5"
+  },
+  "author": "A.S.M. Mahmudul Hasan",
+  "license": "MIT"
+}
