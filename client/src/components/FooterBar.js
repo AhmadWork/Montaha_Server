@@ -44,19 +44,19 @@ class FooterBar extends React.PureComponent {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-sm-4">
-              <h5>Get started</h5>
+        
               <ul>
                 <li>
                   <NavLink exact isActive={this.isLinkActive} className="nav-link" to="/products">
                     <i className="fa fa-home" />
-                    <span>Home</span>
+                    <span>الرئيسية</span>
                   </NavLink>
                 </li>
                 {this.props.loginStatus && (
                   <li>
                     <NavLink exact isActive={this.isLinkActive} className="nav-link" to="/orders">
                       <i className="fa fa-shopping-basket" aria-hidden="true" />
-                      <span>Orders</span>
+                      <span>الطلبات</span>
                     </NavLink>
                   </li>
                 )}
@@ -64,25 +64,25 @@ class FooterBar extends React.PureComponent {
                   <li>
                     <NavLink className="nav-link" to="#" onClick={this.login}>
                       <i className="fa fa-sign-in" />
-                      <span>Signin / Signup</span>
+                      <span>تسجيل الدخول</span>
                     </NavLink>
                   </li>
                 )}
               </ul>
             </div>
             <div className="col-sm-4">
-              <h5>About us</h5>
+             
               <ul>
                 <li>
                   <NavLink exact className="nav-link" to="/about-us">
                     <i className="fa fa-user" />
-                    <span>About Us</span>
+                    <span>من نحن </span>
                   </NavLink>
                 </li>
                 <li>
                   <NavLink exact className="nav-link" to="/contact-us">
                     <i className="fa fa-envelope" />
-                    <span>Contact Us</span>
+                    <span>تواصل معنا</span>
                   </NavLink>
                 </li>
               </ul>
@@ -93,7 +93,7 @@ class FooterBar extends React.PureComponent {
               </div>
               <NavLink className="btn btn-default" to="/contact-us">
                 <i className="fa fa-envelope" />
-                <span>Contact Us</span>
+                <span>تواصل معنا</span>
               </NavLink>
             </div>
           </div>

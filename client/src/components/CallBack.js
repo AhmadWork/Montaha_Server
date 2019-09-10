@@ -8,6 +8,7 @@ class CallBackComponent extends React.Component {
   componentDidMount() {
     if (/access_token|id_token|error/.test(this.props.location.hash)) {
       Auth.handleAuthentication(this.props);
+      
     }
   }
 

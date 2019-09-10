@@ -2,8 +2,15 @@ import axios from 'axios';
 import Auth from '../AuthService/Auth';
 
 import { ACTIONS } from './types';
+import {FETCH_PRODUCTS} from './types'
+export const loadAllProducts = () => async dispatch =>{
+  let res = await axios.get('/api/products');
+   console.log(res.data);
+  dispatch({type:ACTIONS.PRODUCTS_ALL_LOADED,payload:res.data});
+}
 
-export const loadAllProducts = (sort = 'brand', sortOrder = 'asc') => dispatch => {
+export const fetch = (sort = 'brand', sortOrder = 'asc') => dispatch => {
+console.log(localStorage.getItem('access_token'));
   let query;
   if (sort) {
     query = 'sort=' + sort;
@@ -34,8 +41,9 @@ export const loadAllProducts = (sort = 'brand', sortOrder = 'asc') => dispatch =
 
 export const submitNewProduct = productData => dispatch => {
   const accessToken = Auth.getAccessToken();
+  console.log(accessToken);
   console.log('submitNewProduct', productData);
-  const API_URL =  '/api/products';
+  const API_URL =  '/api/products/';
   const headers = { Authorization: `Bearer ${accessToken}` };
   dispatch({
     type: ACTIONS.NEW_PRODUCT_SUBMITTING

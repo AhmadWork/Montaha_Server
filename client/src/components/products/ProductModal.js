@@ -5,6 +5,7 @@ import '../../styles/productModal.scss';
 import PreLoadImage from '../PreLoadImage';
 
 export default class ProductModal extends React.PureComponent {
+
   constructor() {
     super();
     this.addToCart = this.addToCart.bind(this);

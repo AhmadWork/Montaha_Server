@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const httpStatus = require('http-status');
 const APIError = require('../helpers/APIError');
+const bcrypt = require('bcrypt-nodejs');
 
 const Schema = mongoose.Schema;
 
@@ -26,7 +27,7 @@ const UserScema = new Schema({
     type: Date,
     default: Date.now
   },
-  isManager:Boolean
+  isManger: {type:Boolean, default:false}
 });
 /**
  * Statics
@@ -49,6 +50,7 @@ UserScema.statics = {
       });
   },
 
+
   /**
    * List users in descending order of 'createdAt' timestamp.
    * @param {number} skip - Number of users to be skipped.
@@ -62,5 +64,33 @@ UserScema.statics = {
       .limit(+limit)
       .exec();
   }
+};
+UserSchema.pre('save', function (next) {
+  var user = this;
+  if (this.isModified('password') || this.isNew) {
+      bcrypt.genSalt(10, function (err, salt) {
+          if (err) {
+              return next(err);
+          }
+          bcrypt.hash(user.password, salt, null, function (err, hash) {
+              if (err) {
+                  return next(err);
+              }
+              user.password = hash;
+              next();
+          });
+      });
+  } else {
+      return next();
+  }
+});
+
+UserSchema.methods.comparePassword = function (passw, cb) {
+  bcrypt.compare(passw, this.password, function (err, isMatch) {
+      if (err) {
+          return cb(err);
+      }
+      cb(null, isMatch);
+  });
 };
 module.exports = mongoose.model('user', UserScema);

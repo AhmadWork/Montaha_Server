@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-
+import CarouselHolder from './CarouselHolder'
 class Dashboard extends Component {
     render(){
         return (
             <div style={{ textAlign: 'center' }}>
-            <h1>
-              Dashboard
-            </h1>
+            <CarouselHolder />
             
           </div>
         )

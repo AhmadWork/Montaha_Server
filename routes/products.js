@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const validate = require('express-validation');
-const config = require('../config/index');
-const paramValidation = require('../config/param-validation');
+const passport = require('passport');
+require('../config/passport')(passport);
 const ProductController = require('../controllers/ProductController');
 router
   .route('/')
@@ -11,8 +10,7 @@ router
 
   /** POST /api/products - Create new product */
   .post(
-    config.jwtMiddleware,
-    validate(paramValidation.createProduct),
+    passport.authenticate('jwt', { session: false}),
     ProductController.create
   );
 
@@ -23,13 +21,12 @@ router
 
   /** PUT /api/products/:productId - Update product */
   .put(
-    config.jwtMiddleware,
-    validate(paramValidation.updateProduct),
+    passport.authenticate('jwt', { session: false}),
     ProductController.update
   )
   // const checkScopes = jwtAuthz([ 'delete:products' ]);
   /** DELETE /api/products/:productId - Delete product */
-  .delete(config.jwtMiddleware, ProductController.remove);
+  .delete( passport.authenticate('jwt', { session: false}), ProductController.remove);
 
 /** Load user when API with productId route parameter is hit */
 router.param('productId', ProductController.load);

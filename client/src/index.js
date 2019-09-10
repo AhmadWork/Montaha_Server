@@ -1,4 +1,6 @@
 import  'materialize-css/dist/css/materialize.min.css';
+import 'react-animated-slider/build/horizontal.css';
+import './styles/slider-animations.css';
 import './index.css';
 import React from 'react'
 import ReactDOM from 'react-dom';

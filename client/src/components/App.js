@@ -20,7 +20,8 @@ import Checkout from './Checkout';
 import NotFound from './NotFound';
 import MiniCart from './sidebar/MiniCart';
 import '../styles/App.scss';
-import Header from './Header';
+import Map from './Map';
+import Dashboard from './Dashboard'
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -68,7 +69,8 @@ class App extends React.Component {
             <TransitionGroup className="col-md-9 main-content">
               <Switch>
                 <Route path="/callback" component={CallBack} />
-                <Route path="/home" component={Products} />
+                <Route path="/home" component={Dashboard} />
+                <Route path="/map" component={Map}/>
                 <Route path="/contact-us" component={ContactUs} />
                 <Route path="/about-us" component={AboutUs} />
                 <Route path="/products/new" component={NewProduct} />

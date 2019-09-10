@@ -10,6 +10,8 @@ const Cart = require('../models/Cart');
  * @returns {Cart}
  */
 exports.add = function (req, res, next) {
+  var token = getToken(req.headers);
+  if (token) {
   const { email, product_id } = req.body;
   const qty = Number.parseInt(req.body.qty);
   console.log('qty: ', qty);
@@ -59,6 +61,9 @@ exports.add = function (req, res, next) {
       }
       return next(error);
     });
+  }else {
+    return res.status(403).send({success: false, msg: 'Unauthorized.'});
+  }
 };
 
 /**
@@ -69,6 +74,8 @@ exports.add = function (req, res, next) {
  * @returns {Cart}
  */
 exports.subtract = function (req, res, next) {
+  const token = getToken(req.headers);
+  if (token) {
   const { email, product_id } = req.body;
   const qty = Number.parseInt(req.body.qty);
   console.log('qty: ', qty);
@@ -106,7 +113,9 @@ exports.subtract = function (req, res, next) {
         error = new APIError(err.message, httpStatus.NOT_FOUND);
       }
       return next(error);
-    });
+    });}else {
+      return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    }
 };
 
 /**

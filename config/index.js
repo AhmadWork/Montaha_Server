@@ -1,7 +1,7 @@
 const expressJwt = require('express-jwt');
 const jwksRsa = require("jwks-rsa");
 
-process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = 'dev';
 /*
  Auth0 auth middleware for express-jwt
 */
@@ -18,11 +18,10 @@ const jwtCheck = expressJwt({
 });
 
 const config = {
-  env: process.env.NODE_ENV,
+  env: 'dev',
   port: process.env.PORT || 5000,
   jwtExpiresIn: 86400,
   jwtMiddleware: jwtCheck,
-  jwtSecret:'sdfdasdcfdsw'
 };
 
 if (process.env.NODE_ENV === 'production') {

@@ -14,7 +14,7 @@ class OrdersComponent extends React.PureComponent {
       htmlContent = (
         <div className="row">
           <div className="col-md-12">
-            <h4>Please login to view your list of orders.</h4>
+            <h4>الرجاء تسجيل الدخول لعرض طلباتك</h4>
           </div>
         </div>
       );
@@ -22,7 +22,7 @@ class OrdersComponent extends React.PureComponent {
       htmlContent = (
         <div className="row">
           <div className="col-md-12">
-            <h4>You don't have any orders</h4>
+            <h4>لاتوجد لديك طلبات</h4>
           </div>
         </div>
       );
@@ -41,10 +41,11 @@ class OrdersComponent extends React.PureComponent {
               <table className="table table-striped">
                 <thead>
                   <tr>
-                    <th>Order Date</th>
-                    <th>Qty</th>
-                    <th>Price</th>
-                    <th>Subtotal</th>
+                    <th>تاريخ الطلي</th>
+                    <th>الكمية</th>
+                    <th>السعر</th>
+                    <th>المجموع</th>
+                    <th>الضريبة</th>
                   </tr>
                 </thead>
                 <tbody>

@@ -95,7 +95,7 @@ export default class Auth {
     dispatch(clearTheCart());
 
     // navigate to the home route
-    history.replace('/home');
+    history.replace('/');
   }
   /**
    * @param void

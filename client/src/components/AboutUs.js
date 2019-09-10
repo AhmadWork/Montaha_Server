@@ -14,7 +14,7 @@ export default class AboutUs extends React.PureComponent {
           <div className="col-md-8">
             <h2 className="title">About Us</h2>
             <div className="desc">
-              <h5>We're React.js, Angular, Vue.js, Node.js Developers.</h5>
+              <h5>متجر منتهى تابع لشركة قمرة التجارية </h5>
               <p>
                 <NavLink to="/contact-us">Contact Us</NavLink>{' '}
               </p>

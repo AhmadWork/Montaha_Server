@@ -44,28 +44,37 @@ class NavigationBar extends React.PureComponent {
               <li className="nav-item">
                 <NavLink exact isActive={this.isLinkActive} className="nav-link" to="/products">
                   <i className="fa fa-product-hunt" aria-hidden="true" />
-                  <span>Products</span>
+                  <span>المنتجات</span>
                 </NavLink>
               </li>
 
               {this.props.loginStatus && (
-                <li className="nav-item">
+                <React.Fragment>
+<li className="nav-item">
                   <NavLink exact isActive={this.isLinkActive} className="nav-link" to="/orders">
                     <i className="fa fa-shopping-basket" aria-hidden="true" />
-                    <span>Orders</span>
+                    <span>الطلبات</span>
                   </NavLink>
                 </li>
+                 <li className="nav-item">
+                 <NavLink exact isActive={this.isLinkActive} className="nav-link" to="/">
+                   <i className="fa fa-map-o" aria-hidden="true" />
+                   <span>الخريطة</span>
+                 </NavLink>
+               </li>
+                </React.Fragment>
+                
               )}
               <li className="nav-item">
                 <NavLink exact isActive={this.isLinkActive} className="nav-link" to="/contact-us">
                   <i className="fa fa-envelope" aria-hidden="true" />
-                  <span>Contact Us</span>
+                  <span>تواصل معنا</span>
                 </NavLink>
               </li>
               {!this.props.loginStatus && (
                 <li className="nav-item">
                   <NavLink className="nav-link" to="#" onClick={this.login}>
-                    <i className="fa fa-sign-in" aria-hidden="true" /> Signin / Signup
+                    <i className="fa fa-sign-in" aria-hidden="true" />تسجيل الدخول
                   </NavLink>
                 </li>
               )}
@@ -84,7 +93,7 @@ class NavigationBar extends React.PureComponent {
                     aria-labelledby="navbarDropdownMenuLink"
                   >
                     <a className="dropdown-item" onClick={this.logout}>
-                      <i className="fa fa-sign-out" aria-hidden="true" /> Logout
+                      <i className="fa fa-sign-out" aria-hidden="true" /> تسجيل الخروج
                     </a>
                   </div>
                 </li>

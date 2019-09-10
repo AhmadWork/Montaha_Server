@@ -3,6 +3,7 @@ const APIError = require('../helpers/APIError');
 const Order = require('../models/Order');
 const Product = require('../models/Product');
 const Cart = require('../models/Cart');
+const passport = require('passport');
 /**
  * Load product and append to req.
  */
